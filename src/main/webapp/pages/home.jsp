@@ -59,7 +59,7 @@ function saveToDoItem() {
 		  if(result == "success") {
 		    loadAllTodos();	
 			$("#titleId").val("");
-			$("#completedId").attr('checked', false);
+			$("#completedId").prop('checked', false);
 			$("#todoDetails").css("display", "none");
 		  }
 		}
@@ -88,7 +88,7 @@ function showTodoDetailsToUpdate() {
 		  var obj = JSON.parse(JSON.stringify(result));
 		  $("#todoId").val(obj.id);	
 		  $("#titleId").val(obj.title);
-		  $("#completedId").attr('checked', obj.completed);
+		  $("#completedId").prop('checked', obj.completed);
 		  $("#todoDetails").css("display", "block");
 	   }
     });
