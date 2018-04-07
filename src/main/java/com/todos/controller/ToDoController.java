@@ -32,7 +32,6 @@ public class ToDoController {
 	@RequestMapping(value="/todos", method=RequestMethod.GET)
     public List<ToDoForm> getAllTodos() {
     	List<ToDoDto> toDoList = toDoDao.loadAll();
-    	System.out.println("toDoList-->"+toDoList.size());
     	List<ToDoForm> toDoForms = new ArrayList<ToDoForm>();
     	BeanUtils.copyProperties(toDoList, toDoForms);
     	toDoList.forEach(toDoDto -> {
@@ -41,7 +40,6 @@ public class ToDoController {
     		
     		toDoForms.add(toDoForm);
     	});
-    	System.out.println("toDoForms-->"+toDoForms.size());
     	return toDoForms;
     }
 	/**
